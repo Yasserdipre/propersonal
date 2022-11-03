@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Airflow</title>
+  <meta name="Viewport" content="width=device--width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Smooch+Sans:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet"  type="text/css" href="{% static 'css/login.css' %}">
+<link rel="stylesheet"  type="text/css" href="{% static 'css/main.css' %}">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light "  style="background-color: #9C0F0F;">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3 " href="./Index.html" >
+            <img src="{% static 'img/airflow  white .png' %}" alt="" width="78px" class="d-inline-block align-text-top">
+          </a>
+
+          
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            
+            
+
+
+          
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navbar-icons  ">
+              <li class="nav-item pt-1 ">
+                <a class="nav-link active" id="headertext" href="http://127.0.0.1:8000/login/">INICIAR SESION</a>
+              </li>
+              <li class="nav-item ">
+              <a href="#">
+                <span class="iconify" data-icon="el:shopping-cart-sign" style="color: white;"></span>
+                
+              </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <span class="iconify" data-icon="el:heart-alt" style="color: white; "></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <span class="iconify" data-icon="bi:person-circle" style="color: white; "></span>
+                </a>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent d-none d-sm-none d-md-none d-lg-block d-xl-block  d-xxl-block">
+        <div class="container-fluid">
+         
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navb-text">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="./Index.html">Novedades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./hombres.html">Hombres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mujeres.html">Mujeres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="./niños.html">Niños</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./colaboraciones.html">Colaboraciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactos.html">Contactos</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+          
+<!-- partial:index.partial.html -->
+<br>
+
+<div class="container-fluid try">
+  
+<div class="container" id="container">
+  
+  <div class="form-container sign-in-container">
+      <form action="/inisesion/" method="POST">{% csrf_token %}
+        
+          <h1>Sign in</h1>
+          <div class="social-container">
+              <a href="#" class="social"><i class='fab fa-facebook-f fa-lg'></i><br/></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your account</span>
+          <input type="email"  name="emailpri" placeholder="Email" />
+          <input type="password" name="contraseñapri" placeholder="Password" />
+          {% block main %} {% endblock %}
+          <a href="#">Forgot your password?</a>
+          <input type="submit"  class="btn botonpr p-2 w-75 rounded-pill" value="Entrar">
+          
+      </form>
+  </div>
+  <div class="overlay-container">
+      <div class="overlay">
+          <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button class="ghost" id="signIn"> Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+            
+              <button  class="ghost" id="signUp" class="navbar-toggler" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+                  Sign Up</button>
+
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable">
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title" id="staticBackdropLabel">Sign Up</h2>
+   
+   
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+        <form id="login" class="w-100" action="/registrarDatos/" method="POST">{% csrf_token %}
+          {% block content %} {% endblock %}
+          <div id="msg"></div>
+ 
+          <!-- Mensajes de Verificación -->
+          <div id="error" class="alert alert-danger ocultar w-100 text-center" role="alert">
+              ¡Las Contraseñas no coinciden!
+          </div>
+
+          <div class="d-flex">
+            <div class="col me-2">
+              <input type="text" name="txtNombre" id="txtNombre" minlength="3" maxlength="20"  placeholder="Name" required>
+            </div>
+            <div class="col ms-2">
+              <input type="text" name="txtApellidos" id="txtApellidos" minlength="5" maxlength="20" placeholder="Last Name" required>
+            </div>
+          </div>
+        <div class="row  text-center pe-4" >
+            <input type="email" name="email" id="email" minlength="10" maxlength="30" placeholder="Email" required>
+            <input type="password" name="contraseña" id="contraseña" minlength="8" maxlength="20" placeholder="Password" required>
+            <input type="password" id="confirmarcontraseña" minlength="8" maxlength="20" placeholder="Confirm Password">
+            <label for="fecha_dia" >Born Date</label> <br/>
+  
+            <div class="w-100" style="padding-left: 0; padding-right: 0;" >
+            <input class="w-100" name="fecha" type="date" required>
+            </div>
+            <div class="genero w-100 ms-2 ">
+              <label class="text-left" for="Genero">Gender</label> <br/>
+            <select class="w-100" name="genero">
+            <option value="" selected="selected">- selecciona -</option>
+            <option value="01">Hombre</option>
+            <option value="02">Mujer</option>
+            <option value="03">Other</option>
+            
+            </select>
+            </div>
+            
+        </div>
+      
+        
+  </div>
+  
+  </div>
+  <div class="modal-footer">
+    
+    <input type="submit" class="btn btn-primary w-50 py-2 rounded-pill" value="Guardar">
+  </div>
+  </form>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script  src="{% static 'js/login.js' %}"></script>
+        <script  src="{% static 'js/form.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+       
+      </body>
+      </html>
+      
